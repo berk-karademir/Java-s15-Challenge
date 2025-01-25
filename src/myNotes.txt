@@ -1,2 +1,2 @@
 - Person classı, Author ve Reader classlarının superClass'ı mı olacak ?
-Book classındaki satın alım tarihi tam olarak neyi ifade ediyor ?
+- Book classındaki dateOfPurchase fieldı tam olarak neyi ifade ediyor ?

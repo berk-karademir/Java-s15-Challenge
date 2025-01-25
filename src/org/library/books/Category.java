@@ -1,6 +1,6 @@
 package org.library.books;
 
-public enum Categories {
+public enum Category {
 
     EDUCATION,
     NOVEL,
@@ -15,14 +15,15 @@ public enum Categories {
     CHILDREN,
     MANGA,
     COMICS,
-    CRIME,
+    WHODUNIT,
     HORROR,
+    MAGAZINE,
     THRILLER,
     PSYCHOLOGY,
     MUSIC,
     YOUNG_ADULT,
     ART,
     BUSINESS,
-    SELF_HELP,
+    SELF_HELP;
 
 }
