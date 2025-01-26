@@ -1,7 +1,10 @@
 import org.library.books.*;
+import org.library.books.subGenres.Fiction;
 import org.library.shareholders.Author;
 import org.library.shareholders.Person;
-import org.library.shareholders.Reader;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class InfoDesk {
 
@@ -11,41 +14,30 @@ public class InfoDesk {
 
     public static void main(String[] args) {
 
+    Person agathaChristie = SectionManagement.agathaChristie;
+    Person jkRowling = SectionManagement.jkRowling;
 
-        System.out.println("------- READER and AUTHOR --------");
-
-        Person reader = new Reader("Berk");
-        Person author = new Author("Ali");
-        Person reader2 = new Reader("Berk");
-        Person author2 = new Author("Ali");
-
-        Person agatheCristie = new Author("Agathe Cristie");
-
-        reader.whoAreYou();
-        author.whoAreYou();
-        reader2.whoAreYou();
-        author2.whoAreYou();
-
-        System.out.println(author.equals(author2)); //f
-        System.out.println(reader.equals(reader2)); //f
-        br();
+        // Kitapları almak için getBooks metodunu kullanın
+        List<Person> authors = SectionManagement.getAuthors();
+        List<Book> books = SectionManagement.getBooks();
 
 
-        System.out.println("------- BOOK --------");
-        Book magazine1 = new Magazine(123, Category.MAGAZINE, "TIMES",author2,1, Status.BORROWABLE,10.90);
-        Book magazine2 = new Magazine(123, Category.MAGAZINE, "TIMES",author2,1, Status.BORROWABLE,10.90);
-        Book magazine3 = new Magazine(500, Category.MAGAZINE, "TIMES",author2,1, Status.BORROWABLE,10.90);
+        System.out.println("All authors:" + authors);
+        System.out.println("All books:" + books);
 
-        System.out.println(magazine1.equals(magazine2));
-        magazine1.display();
-        magazine2.display();
-        magazine3.display();
-        System.out.println(magazine1.getBookId());
-        System.out.println(magazine2.getBookId());
-        System.out.println(magazine3.getBookId());
-        br();
-        Book whodunit1 = new Whodunit(23456,Category.WHODUNIT,"Doğu Ekspressi'nde Cinayet", agatheCristie,1, Status.BORROWABLE,11.90);
-        System.out.println(whodunit1);
+        // Örnek: Agatha Christie tarafından yazılan kitapları filtrelemek
+        System.out.println("\nBooks by Agatha Christie:");
+        for (Book book : books) {
+            if (book.getAuthor().equals(agathaChristie)) {
+                System.out.println("- " + book.getTitle());
+            }
+        }
+
+
+
+
+
+
 
 
 
