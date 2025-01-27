@@ -1,4 +1,13 @@
 package org.library.books.subGenres;
 
-public class Philosophy {
+import org.library.books.Book;
+import org.library.books.Category;
+import org.library.books.Status;
+import org.library.shareholders.Person;
+
+public class Philosophy extends Book {
+    public Philosophy(Long ISBN, String title, Person author, Integer edition, Status bookStatus, Double price) {
+        super(ISBN, title, author, edition, bookStatus, price);
+        setCategory(Category.PHILOSOPHY);
+    }
 }

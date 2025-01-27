@@ -1,9 +1,8 @@
-import org.library.books.*;
-import org.library.books.subGenres.Fiction;
-import org.library.shareholders.Author;
+package org.library;
+
+import org.library.books.Book;
 import org.library.shareholders.Person;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class InfoDesk {
@@ -14,8 +13,6 @@ public class InfoDesk {
 
     public static void main(String[] args) {
 
-    Person agathaChristie = SectionManagement.agathaChristie;
-    Person jkRowling = SectionManagement.jkRowling;
 
         // Kitapları almak için getBooks metodunu kullanın
         List<Person> authors = SectionManagement.getAuthors();
@@ -28,13 +25,19 @@ public class InfoDesk {
         // Örnek: Agatha Christie tarafından yazılan kitapları filtrelemek
         System.out.println("\nBooks by Agatha Christie:");
         for (Book book : books) {
-            if (book.getAuthor().equals(agathaChristie)) {
+            if (book.getAuthor().equals(SectionManagement.agathaChristie)) {
                 System.out.println("- " + book.getTitle());
             }
         }
 
-
-
+        System.out.println("\nBooks by Kemal Tahir:");
+        for (Book book : books) {
+            if (book.getAuthor().equals(SectionManagement.kemalTahir)) {
+                System.out.println("- " + book.getTitle());
+            }
+        }
+    }
+}
 
 
 
@@ -101,5 +104,3 @@ public class InfoDesk {
 //        frame.setVisible(true);
 //    }
 
-    }
-}

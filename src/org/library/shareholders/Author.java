@@ -13,8 +13,8 @@ public class Author extends Person {
 
     }
 
-    public void showBook() {
-
+    public void showBook(Book book) {
+        System.out.println(book.getAuthor());
     }
 
     @Override

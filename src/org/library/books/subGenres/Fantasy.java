@@ -1,9 +1,13 @@
-package org.library.books;
+package org.library.books.subGenres;
 
+import org.library.books.Book;
+import org.library.books.Category;
+import org.library.books.Status;
 import org.library.shareholders.Person;
 
 public class Fantasy extends Book {
-    public Fantasy(long ISBN,String title, Person author, int edition, Status bookStatus, double price) {
-        super(ISBN, title, author, edition, bookStatus, price);
+    public Fantasy( Long ISBN, String title, Person author, Integer edition, Status bookStatus, Double price) {
+        super( ISBN, title, author, edition, bookStatus, price);
+        setCategory(Category.FANTASY);
     }
 }

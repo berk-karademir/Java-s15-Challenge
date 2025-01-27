@@ -1,6 +1,9 @@
-package org.library.books;
+package org.library;
 
+import org.library.books.Book;
+import org.library.books.Status;
 import org.library.books.subGenres.*;
+import org.library.books.subGenres.Fantasy;
 import org.library.shareholders.Author;
 import org.library.shareholders.Person;
 
@@ -94,7 +97,7 @@ public class SectionManagement {
 
         books.add(new Mystery(createRandomISBN(), "Murder on the Orient Express", agathaChristie, createRandomEdition(), Status.LENDED, createRandomPrice()));
 
-        books.add(new Fantasy(createRandomISBN(), "Harry Potter and the Philosopher's Stone", jkRowling, createRandomEdition(), Status.BORROWABLE, createRandomPrice()));
+        books.add(new Fantasy(createRandomISBN(), "Harry Potter and the Philosopher's Stone", jkRowling, createRandomEdition(), Status.PURCHASABLE, createRandomPrice()));
 
         books.add(new Dystopian(createRandomISBN(), "1984", georgeOrwell, createRandomEdition(), Status.LENDED, createRandomPrice()));
 
@@ -102,17 +105,17 @@ public class SectionManagement {
 
         books.add(new Classic(createRandomISBN(), "The Adventures of Tom Sawyer", markTwain, createRandomEdition(), Status.IN_PREPARATION_STAGE, createRandomPrice()));
 
-        books.add(new Classic(createRandomISBN(), "A Tale of Two Cities", charlesDickens, createRandomEdition(), Status.BORROWABLE, createRandomPrice()));
+        books.add(new Classic(createRandomISBN(), "A Tale of Two Cities", charlesDickens, createRandomEdition(), Status.PURCHASABLE, createRandomPrice()));
 
         books.add(new Classic(createRandomISBN(), "War and Peace", leoTolstoy, createRandomEdition(), Status.BORROWABLE, createRandomPrice()));
 
         books.add(new Classic(createRandomISBN(), "Crime and Punishment", fyodorDostoevsky, createRandomEdition(), Status.LENDED, createRandomPrice()));
 
-        books.add(new Classic(createRandomISBN(), "The Metamorphosis", franzKafka, createRandomEdition(), Status.BORROWABLE, createRandomPrice()));
+        books.add(new Classic(createRandomISBN(), "The Metamorphosis", franzKafka, createRandomEdition(), Status.PURCHASABLE, createRandomPrice()));
 
         books.add(new Play(createRandomISBN(), "Hamlet", williamShakespeare, createRandomEdition(), Status.IN_PREPARATION_STAGE, createRandomPrice()));
 
-        books.add(new Classic(createRandomISBN(), "Les Misérables", victorHugo, createRandomEdition(), Status.LENDED, createRandomPrice()));
+        books.add(new Classic(createRandomISBN(), "Les Misérables", victorHugo, createRandomEdition(), Status.PURCHASABLE, createRandomPrice()));
 
         books.add(new Classic(createRandomISBN(), "Don Quixote", miguelDeCervantes, createRandomEdition(), Status.LENDED, createRandomPrice()));
 
@@ -120,11 +123,11 @@ public class SectionManagement {
 
         books.add(new Classic(createRandomISBN(), "Ulysses", jamesJoyce, createRandomEdition(), Status.LENDED, createRandomPrice()));
 
-        books.add(new Classic(createRandomISBN(), "Moby Dick", hermanMelville, createRandomEdition(), Status.BORROWABLE, createRandomPrice()));
+        books.add(new Classic(createRandomISBN(), "Moby Dick", hermanMelville, createRandomEdition(), Status.PURCHASABLE, createRandomPrice()));
 
         books.add(new Classic(createRandomISBN(), "The Raven", edgarAllanPoe, createRandomEdition(), Status.IN_PREPARATION_STAGE, createRandomPrice()));
 
-        books.add(new Philosophy(createRandomISBN(), "The Stranger", albertCamus, createRandomEdition(), Status.IN_PREPARATION_STAGE, createRandomPrice()));
+        books.add(new Philosophy(createRandomISBN(), "The Stranger", albertCamus, createRandomEdition(), Status.PURCHASABLE, createRandomPrice()));
 
         books.add(new Fiction(createRandomISBN(), "Nausea", jeanPaulSartre, createRandomEdition(), Status.BORROWABLE, createRandomPrice()));
 
@@ -134,13 +137,13 @@ public class SectionManagement {
 
         books.add(new Fiction(createRandomISBN(), "The Name of the Rose", umbertoEco, createRandomEdition(), Status.BORROWABLE, createRandomPrice()));
 
-        books.add(new Fiction(createRandomISBN(), "The Grapes of Wrath", johnSteinbeck, createRandomEdition(), Status.BORROWABLE, createRandomPrice()));
+        books.add(new Fiction(createRandomISBN(), "The Grapes of Wrath", johnSteinbeck, createRandomEdition(), Status.PURCHASABLE, createRandomPrice()));
 
         books.add(new Fiction(createRandomISBN(), "My Name is Red", orhanPamuk, createRandomEdition(), Status.BORROWABLE, createRandomPrice()));
 
         books.add(new Fiction(createRandomISBN(), "Innocent", yasarKemal, createRandomEdition(), Status.LENDED, createRandomPrice()));
 
-        books.add(new Fiction(createRandomISBN(), "The Time Regulation Institute", nazimHikmet, createRandomEdition(), Status.BORROWABLE, createRandomPrice()));
+        books.add(new Fiction(createRandomISBN(), "The Time Regulation Institute", nazimHikmet, createRandomEdition(), Status.PURCHASABLE, createRandomPrice()));
 
         books.add(new Fiction(createRandomISBN(), "The Devil's Advocate", orhanVeli, createRandomEdition(), Status.BORROWABLE, createRandomPrice()));
 
@@ -154,7 +157,7 @@ public class SectionManagement {
 
         books.add(new Fiction(createRandomISBN(), "The Time of the Gypsies", attilaIlhan, createRandomEdition(), Status.LENDED, createRandomPrice()));
 
-        books.add(new Fiction(createRandomISBN(), "The Last Letter", azizNesin, createRandomEdition(), Status.BORROWABLE, createRandomPrice()));
+        books.add(new Fiction(createRandomISBN(), "The Last Letter", azizNesin, createRandomEdition(), Status.PURCHASABLE, createRandomPrice()));
 
         books.add(new Fiction(createRandomISBN(), "The Last Train to Istanbul", peyamiSafa, createRandomEdition(), Status.LENDED, createRandomPrice()));
 
@@ -168,7 +171,7 @@ public class SectionManagement {
 
         books.add(new Fiction(createRandomISBN(), "The Silent House", saitFaikAbasıyanık, createRandomEdition(), Status.LENDED, createRandomPrice()));
 
-        books.add(new Fiction(createRandomISBN(), "The Black Book", haldunTaner, createRandomEdition(), Status.BORROWABLE, createRandomPrice()));
+        books.add(new Fiction(createRandomISBN(), "The Black Book", haldunTaner, createRandomEdition(), Status.PURCHASABLE, createRandomPrice()));
 
         books.add(new Fiction(createRandomISBN(), "The Museum of Innocence", zülfüLivaneli, createRandomEdition(), Status.BORROWABLE, createRandomPrice()));
 
@@ -187,7 +190,6 @@ public class SectionManagement {
 
     public static void main(String[] args) {
         // Initialize the authors and books
-
         // Print all authors
         System.out.println("Authors in the Library: " + getAuthors().size());
 

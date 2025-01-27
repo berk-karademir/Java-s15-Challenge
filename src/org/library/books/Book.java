@@ -9,35 +9,36 @@ import java.util.Objects;
 
 public abstract class Book {
 
-    private static int idCounter = 0;
-    private int bookId;
-    private long ISBN;
+    private static Long idCounter = 0L;
+    private Long bookId;
+    private Long ISBN;
     private Category category;
     private String title;
     private Person author;
-    private int edition;
+    private Integer edition;
     private Status bookStatus;
-    private double price;
+    private Double price;
 
 
-    public Book(long ISBN, Category category, String title, Person author, int edition, Status bookStatus, double price) {
+    public Book(Long ISBN, String title, Person author, Integer edition, Status bookStatus, Double price) {
         this.bookId = ++idCounter;
         this.ISBN = ISBN;
-        this.category = category;
         this.title = title;
         this.author = author;
         this.edition = edition;
         this.bookStatus = bookStatus;
         this.price = price;
-
     }
 
+    public static Long getIdCounter() {
+        return idCounter;
+    }
 
-    public int getBookId() {
+    public Long getBookId() {
         return bookId;
     }
 
-    public long getISBN() {
+    public Long getISBN() {
         return ISBN;
     }
 
@@ -45,7 +46,7 @@ public abstract class Book {
         return category;
     }
 
-    public int getEdition() {
+    public Integer getEdition() {
         return edition;
     }
 
@@ -53,7 +54,7 @@ public abstract class Book {
         return bookStatus;
     }
 
-    public double getPrice() {
+    public Double getPrice() {
         return price;
     }
 
@@ -65,11 +66,6 @@ public abstract class Book {
         return author;
     }
 
-
-    public void setBookStatus(Status bookStatus) {
-        this.bookStatus = bookStatus;
-    }
-
     public void changeOwner(Reader reader) {
         // Implementation needed
     }
@@ -78,19 +74,28 @@ public abstract class Book {
         // Implementation needed
     }
 
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
     public void display() {
         System.out.println(this.toString());
     }
 
-    public void updateStatus(Status status) {
 
+    public void setBookStatus(Status bookStatus) {
+        this.bookStatus = bookStatus;
+    }
+
+    public void updateStatus(Status status) {
+        setBookStatus(status);
     }
 
 
     @Override
     public boolean equals(Object object) {
         if (!(object instanceof Book book)) return false;
-        return bookId == book.bookId;
+        return Objects.equals(bookId, book.bookId);
     }
 
     @Override
@@ -108,7 +113,7 @@ public abstract class Book {
                 "Author: " + author + "\n" +
                 "Edition: " + edition + "\n" +
                 "Price: $" + price + "\n" +
-                "Status: " + (bookStatus.equals(Status.BORROWABLE) ? "Borrowable" : "All landed right now, you can check later.") +
+                "Status: " + bookStatus +
                 "\n";
     }
 
