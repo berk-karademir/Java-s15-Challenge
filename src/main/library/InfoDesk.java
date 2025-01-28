@@ -1,7 +1,7 @@
-package org.library;
+package main.library;
 
-import org.library.books.Book;
-import org.library.shareholders.Person;
+import main.library.books.Book;
+import main.library.shareholders.Author;
 
 import java.util.List;
 
@@ -15,7 +15,7 @@ public class InfoDesk {
 
 
         // Kitapları almak için getBooks metodunu kullanın
-        List<Person> authors = SectionManagement.getAuthors();
+        List<Author> authors = SectionManagement.getAuthors();
         List<Book> books = SectionManagement.getBooks();
 
 

@@ -1,8 +1,7 @@
-package org.library.books;
+package main.library.books;
 
-import org.library.shareholders.Author;
-import org.library.shareholders.Person;
-import org.library.shareholders.Reader;
+import main.library.shareholders.Person;
+import main.library.shareholders.Reader;
 
 import java.util.Objects;
 
@@ -22,13 +21,15 @@ public abstract class Book {
 
     public Book(Long ISBN, String title, Person author, Integer edition, Status bookStatus, Double price) {
         this.bookId = ++idCounter;
-        this.ISBN = ISBN;
-        this.title = title;
+        setISBN(ISBN);
+        setTitle(title);
         this.author = author;
         this.edition = edition;
         this.bookStatus = bookStatus;
         this.price = price;
     }
+
+
 
     public static Long getIdCounter() {
         return idCounter;
@@ -62,22 +63,46 @@ public abstract class Book {
         return title;
     }
 
+    public void setTitle(String title) {
+        if (title == null || title.trim().isEmpty()) {
+            throw new IllegalArgumentException("Book name cannot be null or empty!");
+        }
+
+        // Kitap ismi sayı içerebilir bu koşulu eklemek mantıklı değil!
+//        if (!title.matches("[a-zA-Z\\s]+")) {
+//            throw new IllegalArgumentException(getClass().getSimpleName() + " name must not contain numbers or special characters");
+//        }
+
+
+        /* eğer aynı kitabın birden fazla olmamasını kontrol etmek isteseydik
+            if(this.getTitle().equals(title)) {
+                System.out.println(getTitle() + " already has been added with the same title before.");
+            }
+        */
+        this.title = title;
+    }
+
+    public void setISBN(Long ISBN) {
+
+        if (ISBN == null) {
+            throw new IllegalArgumentException("ISBN cannot be null.");
+        }
+
+        this.ISBN = ISBN;
+    }
+
     public Person getAuthor() {
         return author;
     }
 
     public void changeOwner(Reader reader) {
-        // Implementation needed
     }
 
     public void getOwner(Reader reader) {
-        // Implementation needed
     }
 
-    public void setCategory(Category category) {
-        this.category = category;
-    }
 
+    public void setCategory(Category category) {this.category = category;}
     public void display() {
         System.out.println(this.toString());
     }
@@ -86,7 +111,6 @@ public abstract class Book {
     public void setBookStatus(Status bookStatus) {
         this.bookStatus = bookStatus;
     }
-
     public void updateStatus(Status status) {
         setBookStatus(status);
     }

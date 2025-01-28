@@ -1,4 +1,4 @@
-package org.library.books;
+package main.library.books;
 
 public enum Status {
     LENDED("Lended"),

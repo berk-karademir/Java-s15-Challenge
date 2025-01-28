@@ -1,11 +1,11 @@
-package org.library;
+package main.library;
 
-import org.library.books.Book;
-import org.library.books.Status;
-import org.library.books.subGenres.*;
-import org.library.books.subGenres.Fantasy;
-import org.library.shareholders.Author;
-import org.library.shareholders.Person;
+import main.library.books.Book;
+import main.library.books.Status;
+import main.library.books.subGenres.*;
+import main.library.books.subGenres.Fantasy;
+import main.library.shareholders.Author;
+import main.library.shareholders.Person;
 
 import java.util.*;
 
@@ -21,7 +21,7 @@ public class SectionManagement {
     static Random random = new Random();
 
     // ArrayList oluşturuluyor
-    private static List<Person> authorsList = new ArrayList<>();
+    private static List<Author> authorsList = new ArrayList<>();
 
     // Statik blok ile yazarları oluştur ve listeye ekle
     static {
@@ -70,7 +70,7 @@ public class SectionManagement {
         kemalTahir = new Author("Kemal Tahir"); authorsList.add(kemalTahir);
     }
 
-    public static List<Person> getAuthors() {
+    public static List<Author> getAuthors() {
         return authorsList;
     }
 
@@ -188,13 +188,14 @@ public class SectionManagement {
 
 
 
+
     public static void main(String[] args) {
         // Initialize the authors and books
         // Print all authors
         System.out.println("Authors in the Library: " + getAuthors().size());
 
         for (Person author : getAuthors()) {
-            System.out.println("- " + author.getName());
+            System.out.println("- " + author.getFullName());
         }
 
         System.out.println("\nBooks in the Library: " + getBooks().size());
@@ -203,7 +204,7 @@ public class SectionManagement {
         // Print some book details with their status
         for (Book book : books) {
             System.out.println("Book Title: " + book.getTitle());
-            System.out.println("Author: " + book.getAuthor().getName());
+            System.out.println("Author: " + book.getAuthor().getFullName());
             System.out.println("Edition: " + book.getEdition());
             System.out.println("Status: " + book.getBookStatus());
             System.out.println("Price: $" + String.format("%.2f", book.getPrice()));

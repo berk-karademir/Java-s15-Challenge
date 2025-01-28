@@ -1,9 +1,9 @@
-package org.library.books.subGenres;
+package main.library.books.subGenres;
 
-import org.library.books.Book;
-import org.library.books.Category;
-import org.library.books.Status;
-import org.library.shareholders.Person;
+import main.library.books.Book;
+import main.library.books.Category;
+import main.library.books.Status;
+import main.library.shareholders.Person;
 
 public class Fiction extends Book {
 
