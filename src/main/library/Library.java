@@ -133,7 +133,7 @@ public class Library {
 
     public static List<Book> getAllBooks() {
 
-        Book book = new Mystery(createRandomISBN(), "Murder on the Orient Express", agathaChristie, createRandomEdition(), Status.LENDED, createRandomPrice());
+        Book book = new Mystery(createRandomISBN(), "Murder on the Orient Express", agathaChristie, createRandomEdition(), Status.IN_PREPARATION_STAGE, createRandomPrice());
         books.add(book);
 
 

@@ -29,7 +29,6 @@ public abstract class Person {
     public abstract void whoAreYou();
 
 
-
     @Override
     public String toString() {
         return getClass().getSimpleName() + "'s name: " + fullName;

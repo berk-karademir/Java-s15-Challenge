@@ -34,7 +34,7 @@ public class Main {
 
 
 
-        Person reader = new Reader("Okuyucu Berk", bookList);
+        Person reader = new Reader("Okuyucu Berk");
         System.out.println("Reader's toString():\n" + reader);
         System.out.println("Reader's whoAreYou():");
         reader.whoAreYou();

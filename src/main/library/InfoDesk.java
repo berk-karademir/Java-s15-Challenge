@@ -1,9 +1,13 @@
 package main.library;
 
 import main.library.books.Book;
+import main.library.books.Status;
+import main.library.books.subGenres.Classic;
 import main.library.shareholders.Author;
 import main.library.shareholders.Person;
+import main.library.shareholders.Reader;
 
+import java.sql.SQLOutput;
 import java.util.List;
 import java.util.Scanner;
 
@@ -18,10 +22,14 @@ public class InfoDesk {
 
 
     public static void main(String[] args) {
-        Author randomAuthor = Library.azizNesin;
-        System.out.println(randomAuthor);
-        randomAuthor.showBook();
-
+        System.out.println();
+        Library.azizNesin.showBook();
+        br();
+        Book book1 = new Classic(123L,"title",Library.agathaChristie,1, Status.IN_PREPARATION_STAGE,12.90);
+        Reader reader = new Reader("Okur kişi");
+        System.out.println(reader);
+        reader.borrowBook(book1);
+        System.out.println(reader);
 //        Scanner scanner = new Scanner(System.in); // Scanner nesnesi oluştur
 //
 //        System.out.println("Welcome to our library!");

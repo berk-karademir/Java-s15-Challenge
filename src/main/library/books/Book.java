@@ -18,6 +18,7 @@ public abstract class Book {
     private Integer edition;
     private Status bookStatus;
     private Double price;
+    private int stock;
 
 
     public Book(Long ISBN, String title, Author author, Integer edition, Status bookStatus, Double price) {
@@ -28,7 +29,7 @@ public abstract class Book {
         this.edition = edition;
         this.bookStatus = bookStatus;
         this.price = price;
-
+        this.stock = 1;
         author.addNewBook(this);
 
     }
@@ -49,6 +50,14 @@ public abstract class Book {
 
     public Category getCategory() {
         return category;
+    }
+
+    public int getStock() {
+        return stock;
+    }
+
+    public void setStock(int stock) {
+        this.stock = stock;
     }
 
     public Integer getEdition() {
