@@ -1,5 +1,7 @@
 package main.library.shareholders;
 
+import main.library.books.Book;
+
 import java.util.Objects;
 
 public class Librarian extends Person {
@@ -41,7 +43,10 @@ public class Librarian extends Person {
 
     public void whoAreYou() {
         System.out.println("I'm a " + getClass().getSimpleName() + ", my name is " + getFullName() + ", my ID is " + id + ".");
-    };
+    }
+
+
+
 
     @Override
     public boolean equals(Object object) {

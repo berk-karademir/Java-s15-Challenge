@@ -1,14 +1,11 @@
 package main.library;
 
 import main.library.books.Book;
-import main.library.books.Status;
-import main.library.books.subGenres.Classic;
 import main.library.shareholders.Author;
 import main.library.shareholders.Librarian;
 import main.library.shareholders.Person;
 import main.library.shareholders.Reader;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
@@ -24,8 +21,8 @@ public class Main {
     public static void main(String[] args) {
         br();
         lines();
-        List<Author> authorsList = SectionManagement.getAuthors();
-        List<Book> bookList = SectionManagement.getBooks();
+        List<Person> authorsList = Library.getAuthors();
+        List<Book> bookList = Library.getAllBooks();
 
         char[] password = {'1', '2', '3', '4', '5', '6'};
         Person librarian = new Librarian("Kütüphaneci Berk", password);

@@ -1,5 +1,7 @@
 package main.library.shareholders;
 
+import main.library.books.Book;
+
 public abstract class Person {
 
     private String fullName;
@@ -25,7 +27,6 @@ public abstract class Person {
     }
 
     public abstract void whoAreYou();
-
 
 
 

@@ -1,5 +1,6 @@
 package main.library.books;
 
+import main.library.shareholders.Author;
 import main.library.shareholders.Person;
 import main.library.shareholders.Reader;
 
@@ -13,13 +14,13 @@ public abstract class Book {
     private Long ISBN;
     private Category category;
     private String title;
-    private Person author;
+    private Author author;
     private Integer edition;
     private Status bookStatus;
     private Double price;
 
 
-    public Book(Long ISBN, String title, Person author, Integer edition, Status bookStatus, Double price) {
+    public Book(Long ISBN, String title, Author author, Integer edition, Status bookStatus, Double price) {
         this.bookId = ++idCounter;
         setISBN(ISBN);
         setTitle(title);
@@ -27,6 +28,9 @@ public abstract class Book {
         this.edition = edition;
         this.bookStatus = bookStatus;
         this.price = price;
+
+        author.addNewBook(this);
+
     }
 
 
@@ -95,6 +99,14 @@ public abstract class Book {
         return author;
     }
 
+    public void setAuthor(Author author) {
+        this.author = author;
+        if (author != null) {
+            // Add the book to the new author's list
+            author.addNewBook(this);
+        }
+    }
+
     public void changeOwner(Reader reader) {
     }
 
@@ -134,7 +146,7 @@ public abstract class Book {
                 "ISBN: " + ISBN + "\n" +
                 "Category: " + category + "\n" +
                 "Title: '" + title + '\'' + "\n" +
-                "Author: " + author + "\n" +
+                 author + "\n" +
                 "Edition: " + edition + "\n" +
                 "Price: $" + price + "\n" +
                 "Status: " + bookStatus +

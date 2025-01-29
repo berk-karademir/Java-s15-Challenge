@@ -35,6 +35,7 @@ public class Reader extends Person {
         System.out.println("I'm a " + getClass().getSimpleName().toLowerCase() + ", my name is " + getFullName() + ", my Library Member ID: " + id + ".");
     }
 
+
     @Override
     public boolean equals(Object object) {
         if (!(object instanceof Reader reader)) return false;

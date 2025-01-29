@@ -15,17 +15,17 @@ public class Author extends Person {
         this.books = new ArrayList<>();
     }
 
-    public void addNewBook(Book book) {
-        if(this.equals(book)){
-            books.add(book);
+    public void addNewBook(Book book){
+        books.add(book);
+    };
 
-        }
+
+    public List<Book> getBooks() {
+        return books;
     }
 
-
-
     public void showBook(){
-        System.out.println("The books written by: " + getFullName());
+        System.out.println("The books written by " + getFullName() + ":");
         for (Book book : books) {
             System.out.println("- " + book.getTitle());
         };
@@ -37,6 +37,7 @@ public class Author extends Person {
 
     @Override
     public String toString() {
-        return super.toString() + ", i have "+ books.size() +" books in this library and here is the list: " + books + "\n";
+        return super.toString();
     }
+         //+ ", i have "+ books.size() + (books.size() != 1 ? " books " : " book ") +"in this library and you can call my showBook method to see all my books."
 }

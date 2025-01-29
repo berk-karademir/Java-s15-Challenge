@@ -2,8 +2,10 @@ package main.library;
 
 import main.library.books.Book;
 import main.library.shareholders.Author;
+import main.library.shareholders.Person;
 
 import java.util.List;
+import java.util.Scanner;
 
 public class InfoDesk {
 
@@ -11,96 +13,60 @@ public class InfoDesk {
         System.out.println("----------------------------------------------------------------");
     }
 
+    static List<Book> allBooks = Library.getAllBooks();
+    static List<Person> allAuthors = Library.getAuthors();
+
+
     public static void main(String[] args) {
+        Author randomAuthor = Library.azizNesin;
+        System.out.println(randomAuthor);
+        randomAuthor.showBook();
 
-
-        // Kitapları almak için getBooks metodunu kullanın
-        List<Author> authors = SectionManagement.getAuthors();
-        List<Book> books = SectionManagement.getBooks();
-
-
-        System.out.println("All authors:" + authors);
-        System.out.println("All books:" + books);
-
-        // Örnek: Agatha Christie tarafından yazılan kitapları filtrelemek
-        System.out.println("\nBooks by Agatha Christie:");
-        for (Book book : books) {
-            if (book.getAuthor().equals(SectionManagement.agathaChristie)) {
-                System.out.println("- " + book.getTitle());
-            }
-        }
-
-        System.out.println("\nBooks by Kemal Tahir:");
-        for (Book book : books) {
-            if (book.getAuthor().equals(SectionManagement.kemalTahir)) {
-                System.out.println("- " + book.getTitle());
-            }
-        }
+//        Scanner scanner = new Scanner(System.in); // Scanner nesnesi oluştur
+//
+//        System.out.println("Welcome to our library!");
+//        System.out.println("Select the operation you want to perform from the operation menu below.");
+//
+//        while (true) {
+//            System.out.println("Enter 1 - 3 for operations, or 0 to exit.\n" +
+//                    "- 1 for librarian operations,\n" +
+//                    "- 2 for member operations,\n" +
+//                    "- 3 for manager operations.");
+//
+//            // Kullanıcıdan giriş al
+//            int getIntInput;
+//            if (scanner.hasNextInt()) {
+//                getIntInput = scanner.nextInt();
+//                scanner.nextLine(); // Tamponu temizle
+//            } else {
+//                System.out.println("Invalid input. Please enter a number.");
+//                scanner.nextLine(); // Geçersiz girdiyi temizle
+//                continue;
+//            }
+//
+//            if (getIntInput == 0) {
+//                System.out.println("Exiting the program. Goodbye!");
+//                break;
+//            }
+//
+//            switch (getIntInput) {
+//                case 0:
+//                    System.out.println("sıfır");
+//                    break;
+//                case 1:
+//                    System.out.println("bir");
+//                    break;
+//                case 2:
+//                    System.out.println("iki");
+//                    break;
+//                case 3:
+//                    System.out.println("üç");
+//                    break;
+//                default:
+//                    System.out.println("Invalid choice. Please enter a number between 0 and 5.");
+//            }
+//        }
+//
+//        scanner.close(); // Scanner'ı kapat
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//        JFrame frame = new JFrame("Kütüphaneye Hoşgeldiniz");
-//        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//        frame.setSize(400, 300);
-//        frame.setLayout(new BorderLayout());
-//
-//        // Başlık etiketi
-//        JLabel welcomeLabel = new JLabel("Kütüphaneye Hoşgeldiniz!", SwingConstants.CENTER);
-//        welcomeLabel.setFont(new Font("Arial", Font.BOLD, 18));
-//        frame.add(welcomeLabel, BorderLayout.NORTH);
-//
-//        // Buton paneli
-//        JPanel buttonPanel = new JPanel();
-//        buttonPanel.setLayout(new FlowLayout());
-//
-//        // Login butonu
-//        JButton loginButton = new JButton("Login");
-//        loginButton.setPreferredSize(new Dimension(100, 40));
-//        buttonPanel.add(loginButton);
-//
-//        // Signup butonu
-//        JButton signupButton = new JButton("Signup");
-//        signupButton.setPreferredSize(new Dimension(100, 40));
-//        buttonPanel.add(signupButton);
-//
-//        frame.add(buttonPanel, BorderLayout.CENTER);
-//
-//        // Login butonuna tıklama olayı
-//        loginButton.addActionListener(new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//                JOptionPane.showMessageDialog(frame, "Login ekranına yönlendiriliyorsunuz.",
-//                        "Login", JOptionPane.INFORMATION_MESSAGE);
-//                // Burada login ekranını açabilirsiniz
-//            }
-//        });
-//
-//        // Signup butonuna tıklama olayı
-//        signupButton.addActionListener(new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//                JOptionPane.showMessageDialog(frame, "Signup ekranına yönlendiriliyorsunuz.",
-//                        "Signup", JOptionPane.INFORMATION_MESSAGE);
-//                // Burada signup ekranını açabilirsiniz
-//            }
-//        });
-//
-//        // Pencereyi görünür yap
-//        frame.setLocationRelativeTo(null); // Ortala
-//        frame.setVisible(true);
-//    }
-
