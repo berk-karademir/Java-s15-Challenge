@@ -25,36 +25,35 @@ public class Playground {
 
         // Kitapları almak için getBooks metodunu kullanın
 
-
-        List<Person> authors = Library.getAuthors();
-        List<Book> books = Library.getAllBooks();
-
-
-        System.out.println("All authors:" + authors);
-        System.out.println("All books:" + books);
-
-        // Örnek: Agatha Christie tarafından yazılan kitapları filtrelemek
-        System.out.println("\nBooks by Agatha Christie:");
-        for (Book book : books) {
-            if (book.getAuthor().equals(Library.agathaChristie)) {
-                System.out.println("- " + book.getTitle());
-            }
-        }
-
-        System.out.println("\nBooks by Kemal Tahir:");
-        for (Book book : books) {
-            if (book.getAuthor().equals(Library.kemalTahir)) {
-                System.out.println("- " + book.getTitle());
-            }
-        }
-
-        System.out.println("-----------------------------------------------------------");
-        Author yazar1 = new Author("Yazar Bey");
-        Book book1 = new Fiction(123L, "Fiction book", yazar1,1,Status.BORROWABLE,12.90);
-        yazar1.addNewBook(book1);
-        System.out.println(yazar1);
-        yazar1.showBook();
-        yazar1.whoAreYou();
+//
+//        List<Author> authors = Library.getAuthors();
+//        List<Book> books = Library.getAllBooks();
+//
+//        System.out.println("All authors:" + authors);
+//        System.out.println("All books:" + books);
+//
+//        // Örnek: Agatha Christie tarafından yazılan kitapları filtrelemek
+//        System.out.println("\nBooks by Agatha Christie:");
+//        for (Book book : books) {
+//            if (book.getAuthor().equals(Library.agathaChristie)) {
+//                System.out.println("- " + book.getTitle());
+//            }
+//        }
+//
+//        System.out.println("\nBooks by Kemal Tahir:");
+//        for (Book book : books) {
+//            if (book.getAuthor().equals(Library.kemalTahir)) {
+//                System.out.println("- " + book.getTitle());
+//            }
+//        }
+//
+//        System.out.println("-----------------------------------------------------------");
+//        Author yazar1 = new Author("Yazar Bey");
+//        Book book1 = new Fiction(123L, "Fiction book", yazar1,1,Status.BORROWABLE,12.90);
+//        yazar1.addNewBook(book1);
+//        System.out.println(yazar1);
+//        yazar1.showBook();
+//        yazar1.whoAreYou();
 
 
     }

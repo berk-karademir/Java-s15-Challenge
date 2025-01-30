@@ -6,8 +6,8 @@ public abstract class Person {
 
     private String fullName;
 
-    public Person(String fullName){
-        setName(fullName);
+    public Person(String fullName) {
+        this.fullName = fullName;
     }
 
     public String getFullName() {
@@ -16,7 +16,7 @@ public abstract class Person {
 
     public void setName(String fullName) {
         if (fullName == null || fullName.trim().isEmpty()) {
-            throw new IllegalArgumentException(getClass().getSimpleName() + " name cannot be null or empty!");
+            throw new IllegalArgumentException(getClass().getSimpleName() + "'s name cannot be null or empty!");
         }
 
         // İnsan isminin yalnızca harflerden oluştuğunu kontrol eder
@@ -31,7 +31,7 @@ public abstract class Person {
 
     @Override
     public String toString() {
-        return getClass().getSimpleName() + "'s name: " + fullName;
+        return "\n"+getClass().getSimpleName() + "'s name: " + fullName ;
     }
 
 }

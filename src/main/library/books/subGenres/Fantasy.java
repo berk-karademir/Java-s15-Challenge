@@ -7,8 +7,8 @@ import main.library.shareholders.Author;
 import main.library.shareholders.Person;
 
 public class Fantasy extends Book {
-    public Fantasy(Long ISBN, String title, Author author, Integer edition, Status bookStatus, Double price) {
-        super( ISBN, title, author, edition, bookStatus, price);
+    public Fantasy(Long ISBN, String title, Author author, Integer edition, Double price) {
+        super( ISBN, title, author, edition, price);
         setCategory(Category.FANTASY);
     }
 }

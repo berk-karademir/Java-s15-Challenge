@@ -9,8 +9,8 @@ import main.library.shareholders.Person;
 public class Fiction extends Book {
 
 
-    public Fiction(Long ISBN, String title, Author author, Integer edition, Status bookStatus, Double price) {
-        super( ISBN, title, author, edition, bookStatus, price);
+    public Fiction(Long ISBN, String title, Author author, Integer edition, Double price) {
+        super( ISBN, title, author, edition, price);
         setCategory(Category.FICTION);
     }
 }

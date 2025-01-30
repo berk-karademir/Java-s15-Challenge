@@ -4,11 +4,10 @@ import main.library.books.Book;
 import main.library.books.Category;
 import main.library.books.Status;
 import main.library.shareholders.Author;
-import main.library.shareholders.Person;
 
-public class Philosophy extends Book {
-    public Philosophy(Long ISBN, String title, Author author, Integer edition, Double price) {
+public class Education extends Book {
+    public Education(Long ISBN, String title, Author author, Integer edition, Status bookStatus, Double price) {
         super(ISBN, title, author, edition, price);
-        setCategory(Category.PHILOSOPHY);
+        setCategory(Category.EDUCATION);
     }
 }

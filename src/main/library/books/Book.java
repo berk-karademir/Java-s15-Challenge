@@ -1,5 +1,6 @@
 package main.library.books;
 
+import main.library.management.Inventory;
 import main.library.shareholders.Author;
 import main.library.shareholders.Person;
 import main.library.shareholders.Reader;
@@ -21,17 +22,19 @@ public abstract class Book {
     private int stock;
 
 
-    public Book(Long ISBN, String title, Author author, Integer edition, Status bookStatus, Double price) {
+    public Book(Long ISBN, String title, Author author, Integer edition, Double price) {
         this.bookId = ++idCounter;
         setISBN(ISBN);
         setTitle(title);
         this.author = author;
         this.edition = edition;
-        this.bookStatus = bookStatus;
+        this.bookStatus = Status.BORROWABLE;
         this.price = price;
         this.stock = 1;
-        author.addNewBook(this);
-
+        Inventory.bookList.add(this);
+        if (author != null) {
+            author.addNewBook(this);
+        }
     }
 
 
@@ -75,6 +78,9 @@ public abstract class Book {
     public String getTitle() {
         return title;
     }
+
+
+
 
     public void setTitle(String title) {
         if (title == null || title.trim().isEmpty()) {
@@ -130,8 +136,10 @@ public abstract class Book {
 
 
     public void setBookStatus(Status bookStatus) {
+
         this.bookStatus = bookStatus;
     }
+
     public void updateStatus(Status status) {
         setBookStatus(status);
     }
@@ -154,7 +162,7 @@ public abstract class Book {
                 "ID: " + bookId + "\n" +
                 "ISBN: " + ISBN + "\n" +
                 "Category: " + category + "\n" +
-                "Title: '" + title + '\'' + "\n" +
+                "Title: " + title + "\n" +
                  author + "\n" +
                 "Edition: " + edition + "\n" +
                 "Price: $" + price + "\n" +
