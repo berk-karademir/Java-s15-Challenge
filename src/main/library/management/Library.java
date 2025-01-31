@@ -1,23 +1,25 @@
 package main.library.management;
 
 import main.library.books.Book;
+import main.library.shareholders.LibraryMember;
 import main.library.shareholders.Reader;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
+//Singleton Class
 public class Library {
-    private static Library instance;  // Singleton örneği
+    private static Library instance;
     private List<Book> books;
     private List<Reader> readers;
 
-    // **PRIVATE constructor**
     private Library() {
         this.books = Inventory.bookList;
         this.readers = new ArrayList<>();
     }
 
-    // Singleton nesnesini döndüren metot
+
     public static Library getInstance() {
         if (instance == null) {
             instance = new Library();
@@ -33,11 +35,13 @@ public class Library {
         return readers;
     }
 
-    // Yeni okuyucuyu Library'ye ekleme
+
     public void addReader(Reader reader) {
         readers.add(reader);
-        System.out.println(reader.getFullName() + " has been added to the library system.");
+        System.out.println(reader.getFullName() + " has been added to the library as a reader.");
     }
+
+
 
     @Override
     public String toString() {

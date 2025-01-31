@@ -1,24 +1,34 @@
 package main.library;
 
+import main.library.books.Book;
+import main.library.books.subGenres.Mystery;
+import main.library.management.Inventory;
+import main.library.shareholders.Author;
+import main.library.shareholders.Person;
+
+import java.util.List;
+
 public class InfoDesk {
 
     public static void br() {
         System.out.println("----------------------------------------------------------------");
     }
 
-//    static List<Author> allAuthors = AuthorList.authorList;
-//    static List<Book> allBooks = BookList.bookList;
-    static String password = "123";
-    static String librarianUserName = "librarian";
-    static String memberUserName = "member";
-    static String managerUserName = "manager";
+
+    static List<Author> allAuthors = Inventory.authorList;
+    static  List<Book> allBooks = Inventory.bookList;
+//    static String password = "123";
+//    static String librarianUserName = "librarian";
+//    static String memberUserName = "member";
+//    static String managerUserName = "manager";
 
     public static void main(String[] args) {
         System.out.println();
 
-
-
-
+        Author author = new Author("YAZAR");
+        Book book = new Mystery(1L,"KITAP",author,1,12.90);
+        System.out.println(allAuthors);
+        System.out.println(allBooks);
 //        Scanner scanner = new Scanner(System.in); // Scanner nesnesi oluştur
 //
 //        System.out.println("Welcome to our library!");

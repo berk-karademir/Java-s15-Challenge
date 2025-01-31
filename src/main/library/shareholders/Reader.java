@@ -31,7 +31,7 @@ public class Reader extends Person implements ReaderInterface{
         if (book.getStock() >=1) {
             System.out.println("Purchase free: " + book.getPrice());
             books.add(book);
-            book.setStock(book.getStock()-1);
+            book.setStock(book.getStock() - 1);
             System.out.println(book.getTitle() + " has been bought by " + this.getFullName());
 
         }

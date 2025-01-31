@@ -143,7 +143,6 @@ public class Inventory {
 
         Book book = new Mystery(generateRandomISBN(), "Murder on the Orient Express", agathaChristie, generateRandomEdition(), setRandomPrice());
 //        bookList.add(book);
-//
 
         Book book2 = new Fantasy(generateRandomISBN(), "Harry Potter and the Philosopher's Stone", jkRowling, generateRandomEdition(), setRandomPrice());
 //        bookList.add(book2);

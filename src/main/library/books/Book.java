@@ -123,6 +123,7 @@ public abstract class Book {
     }
 
     public void changeOwner(Reader reader) {
+
     }
 
     public void getOwner(Reader reader) {
@@ -162,10 +163,11 @@ public abstract class Book {
                 "ID: " + bookId + "\n" +
                 "ISBN: " + ISBN + "\n" +
                 "Category: " + category + "\n" +
-                "Title: " + title + "\n" +
+                "Title: " + title  +
                  author + "\n" +
                 "Edition: " + edition + "\n" +
                 "Price: $" + price + "\n" +
+                stock + " in the stock" + "\n" +
                 "Status: " + bookStatus +
                 "\n";
     }

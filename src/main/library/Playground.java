@@ -2,9 +2,13 @@ package main.library;
 
 import main.library.books.Book;
 import main.library.books.Status;
+import main.library.books.subGenres.Dystopian;
 import main.library.books.subGenres.Fiction;
+import main.library.management.Inventory;
 import main.library.shareholders.Author;
+import main.library.shareholders.Librarian;
 import main.library.shareholders.Person;
+import main.library.shareholders.Reader;
 
 import java.util.List;
 
@@ -48,12 +52,45 @@ public class Playground {
 //        }
 //
 //        System.out.println("-----------------------------------------------------------");
-//        Author yazar1 = new Author("Yazar Bey");
-//        Book book1 = new Fiction(123L, "Fiction book", yazar1,1,Status.BORROWABLE,12.90);
+        Author yazar1 = new Author("Yazar Bey");
+//        Book book1 = new Fiction(123L, "Fiction book", yazar1,1,12.90);
 //        yazar1.addNewBook(book1);
 //        System.out.println(yazar1);
 //        yazar1.showBook();
 //        yazar1.whoAreYou();
+        Librarian librarian = new Librarian("Librarian");
+//        librarian.searchBook(book1);
+//        System.out.println();
+//        librarian.searchBookByAuthorName("Agatha Christie");
+//        librarian.searchBookByAuthorName("Halide Edip Adıvar");
+//        librarian.searchBookByTitle("The Last Letter");
+//
+//        Book book = new Fiction(123L, "The Museum of Innocence", Inventory.halideEdipAdivar, 2, 11.90);
+//
+//        Inventory.halideEdipAdivar.addNewBook(book);
+//
+//        System.out.println(book.getStock());
+//
+//        Reader reader = new Reader("okur kişi");
+//                    reader.borrowBook(book);
+//        System.out.println(book.getStock());
+
+//        librarian.searchBook(" ");
+//        librarian.searchBook("");
+//
+//        librarian.searchBook("asd");
+//        librarian.searchBook("       1984         ");
+//        librarian.searchBook("1984");
+//        System.out.println();
+//        librarian.searchBook("pott");
+//        librarian.searchBook("mys");
+//        librarian.searchBook("comedy");
+//        librarian.searchBook("com");
+//        librarian.searchBook("class");
+//        System.out.println("*****************************");
+//        librarian.searchBook("aziz");
+        librarian.searchBook("the");
+
 
 
     }
