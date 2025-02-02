@@ -12,7 +12,11 @@ import java.util.List;
 import java.util.Map;
 
 public class Main {
+
+
 static List<Author> yazarliste = Inventory.getAuthorsList();
+
+
     static void br() {
         System.out.println();
     }
@@ -43,5 +47,7 @@ static List<Author> yazarliste = Inventory.getAuthorsList();
 //        System.out.println(library1.equals(library));
         Library library = Library.getInstance();
         System.out.println(library);
+
+
     }
 }

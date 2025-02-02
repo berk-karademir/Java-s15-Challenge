@@ -132,7 +132,7 @@ public abstract class Book {
 
     public void setCategory(Category category) {this.category = category;}
     public void display() {
-        System.out.println(this.toString());
+        System.out.println(this);
     }
 
 

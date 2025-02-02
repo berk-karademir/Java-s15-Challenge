@@ -41,6 +41,12 @@ public class LibraryMember {
         }
     }
 
+
+
+    public void setMaxBookLimit(Integer maxBookLimit) {
+        this.maxBookLimit = maxBookLimit;
+    }
+
     public void increaseMaxBooksIssued(Integer maxBooksCount) {
 
     }
